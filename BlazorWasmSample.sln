@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasmSample", "BlazorWasmSample\BlazorWasmSample.csproj", "{025088FB-41EC-466D-8A4B-01E5E5C73EC8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{4770B7E6-36AE-470D-AFC2-3EBA714DE43D}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\CodeAnalysis.ruleset = SolutionItems\CodeAnalysis.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
