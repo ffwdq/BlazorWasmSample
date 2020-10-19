@@ -8,6 +8,14 @@ Following needs to be added to csprojs:
 <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 <CodeAnalysisRuleSet>$(SolutionDir)/SolutionItems/CodeAnalysis.ruleset</CodeAnalysisRuleSet>
 ```
+## Code behind
+I find it more readable to have the HTML template and code separated.
+So all components use code behind.
+* code behind class needs to be partial
+* to replace ```@inject``` use [Inject] on property
+
+[MSDN](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/?view=aspnetcore-3.1#partial-class-support)
+
 ### CSS TODO
 Use sass
 do scoped css - need .net 5
