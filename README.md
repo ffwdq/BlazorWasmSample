@@ -32,3 +32,4 @@ SCSS, l10n, i18n, unified semantic logging
 unit & integration test runners 
 HTTP client wrapper + error handling 
 Data tables 
+unhandled exceptions
