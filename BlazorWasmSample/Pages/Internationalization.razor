@@ -1,0 +1,11 @@
+﻿@page "/internationalization"
+
+<span class="row">@Localizer["Current culture:"] @(InternationalizationService.CurrentCultureInfo.DisplayName)</span>
+<span class="row">@Localizer["Current time:"] @Now</span>
+
+<select class="row" value="@InternationalizationService.CurrentCultureInfo" @onchange="CurrentCultureChanged">
+    @foreach (var culture in Services.InternationalizationService.SupportedCultureInfos)
+    {
+        <option value="@culture">@culture.NativeName</option>
+    }
+</select>

@@ -1,0 +1,1 @@
+﻿getBrowserLanguage = () => navigator.language;
