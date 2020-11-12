@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Blazored.LocalStorage;
-using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
 namespace BlazorWasmSample.Services
@@ -13,12 +12,16 @@ namespace BlazorWasmSample.Services
     {
         private const string BlazorCultureKey = "BlazorCulture";
 
+        public InternationalizationService(IJSRuntime jsRuntime, ILocalStorageService localStorageService)
+        {
+            JSRuntime = jsRuntime;
+            LocalStorageService = localStorageService;
+        }
+
         public static IEnumerable<CultureInfo> SupportedCultureInfos { get; } = new[] { new CultureInfo("en-US"), new CultureInfo("cs-CZ") };
 
-        [Inject]
         public IJSRuntime JSRuntime { get; set; }
 
-        [Inject]
         public ILocalStorageService LocalStorageService { get; set; }
 
         public CultureInfo CurrentCultureInfo => CultureInfo.CurrentCulture;

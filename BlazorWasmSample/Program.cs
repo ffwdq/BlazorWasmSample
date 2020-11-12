@@ -21,8 +21,7 @@ namespace BlazorWasmSample
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddSingleton<InternationalizationService, InternationalizationService>();
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.RegisterServices(builder.HostEnvironment.BaseAddress);
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddLocalization(opt => opt.ResourcesPath = "Resources");
             var host = builder.Build();

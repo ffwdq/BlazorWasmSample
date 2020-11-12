@@ -14,13 +14,13 @@ namespace BlazorWasmSample.Pages
         public System.DateTime Now => System.DateTime.Now;
 
         [Inject]
-        public NavigationManager NavigationManager { get; set; }
+        private NavigationManager NavigationManager { get; set; }
 
         [Inject]
-        public InternationalizationService InternationalizationService { get; set; }
+        private InternationalizationService InternationalizationService { get; set; }
 
         [Inject]
-        public IStringLocalizer<Internationalization> Localizer { get; set; }
+        private IStringLocalizer<Internationalization> Localizer { get; set; }
 
         protected override void OnInitialized()
         {

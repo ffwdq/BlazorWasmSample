@@ -12,7 +12,7 @@ Following needs to be added to csprojs:
 I find it more readable to have the HTML template and code separated.
 So all components use code behind.
 * code behind class needs to be partial
-* to replace ```@inject``` use [Inject] on property
+* to replace `@inject` use `[Inject]` on property
 
 [MSDN](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/?view=aspnetcore-3.1#partial-class-support)
 
@@ -29,6 +29,14 @@ The resources are in resx files under Resources folder.
 
 [MSDN](https://docs.microsoft.com/en-us/aspnet/core/blazor/globalization-localization?view=aspnetcore-3.1)
 
+## Dependecy injection
+Blazor supports DI. The registration is handled in `DependencyInjectionServiceCollectionExtensions`.
+
+Non component classes (`InternationalizationService`) can use constructor injections but all comoponent classes has to use property injection with `[Inject]`.
+The access modifier on the property doesnt matter (can be private).
+
+[MSDN](https://docs.microsoft.com/en-us/aspnet/core/blazor/fundamentals/dependency-injection?view=aspnetcore-3.1)
+
 ### TODO: CSS
 Use sass
 do scoped css - need .net 5
@@ -40,8 +48,6 @@ TODO: js/typescript
 TODO: logging
 TODO: editor config
 TODO: configuration - environments 
-TODO: dependency injection => autofac or something else?
-TODO: unified semantic logging 
 TODO: unit & integration test runners 
 TODO: HTTP client wrapper + error handling 
 TODO: Data tables 
