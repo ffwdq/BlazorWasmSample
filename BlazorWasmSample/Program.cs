@@ -26,11 +26,7 @@ namespace BlazorWasmSample
             builder.Services.AddLocalization(opt => opt.ResourcesPath = "Resources");
             var host = builder.Build();
 
-            var jsRuntime = host.Services.GetRequiredService<IJSRuntime>();
-            var localStorageService = host.Services.GetRequiredService<ILocalStorageService>();
-            var i18nService = host.Services.GetRequiredService<InternationalizationService>();
-            i18nService.JSRuntime = jsRuntime;
-            i18nService.LocalStorageService = localStorageService;
+            var i18nService = host.Services.GetRequiredService<IInternationalizationService>();
             await i18nService.Initialize().ConfigureAwait(true);
 
             await host.RunAsync().ConfigureAwait(false);

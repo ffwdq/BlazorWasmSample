@@ -9,22 +9,20 @@ namespace BlazorWasmSample.Pages
 {
     public partial class Internationalization : IDisposable
     {
-        private Timer timeTimer;
-
-        public System.DateTime Now => System.DateTime.Now;
+        private Timer _timeTimer;
 
         [Inject]
         private NavigationManager NavigationManager { get; set; }
 
         [Inject]
-        private InternationalizationService InternationalizationService { get; set; }
+        private IInternationalizationService InternationalizationService { get; set; }
 
         [Inject]
         private IStringLocalizer<Internationalization> Localizer { get; set; }
 
         protected override void OnInitialized()
         {
-            timeTimer = new Timer(state => StateHasChanged(), null, 1000, 1000);
+            _timeTimer = new Timer(state => StateHasChanged(), null, 1000, 1000);
 
             base.OnInitialized();
         }
@@ -40,7 +38,7 @@ namespace BlazorWasmSample.Pages
 
         public void Dispose()
         {
-            timeTimer.Dispose();
+            _timeTimer.Dispose();
         }
     }
 }

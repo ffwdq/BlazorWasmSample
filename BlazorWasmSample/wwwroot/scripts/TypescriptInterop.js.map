@@ -1,0 +1,1 @@
+{"version":3,"file":"TypescriptInterop.js","sourceRoot":"","sources":["TypescriptInterop.ts"],"names":[],"mappings":"AAAA,MAAM,KAAW,wBAAwB,CAMxC;AAND,WAAiB,wBAAwB;IACrC;QAAA;QAIA,CAAC;QAHiB,4BAAU,GAAxB,UAAyB,OAAe;YACpC,OAAO,MAAM,CAAC,OAAO,EAAE,oBAAoB,CAAC,CAAC;QACjD,CAAC;QACL,wBAAC;IAAD,CAAC,AAJD,IAIC;IAJY,0CAAiB,oBAI7B,CAAA;AACL,CAAC,EANgB,wBAAwB,KAAxB,wBAAwB,QAMxC"}

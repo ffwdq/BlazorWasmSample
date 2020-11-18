@@ -10,7 +10,7 @@ namespace BlazorWasmSample
     {
         public static IServiceCollection RegisterServices(this IServiceCollection services, string baseAddress)
         {
-            services.AddScoped<InternationalizationService, InternationalizationService>();
+            services.AddScoped<IInternationalizationService, InternationalizationService>();
             services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
             return services;
         }
