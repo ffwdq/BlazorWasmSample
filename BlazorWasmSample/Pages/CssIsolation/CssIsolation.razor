@@ -1,0 +1,10 @@
+﻿@page "/cssisolation"
+
+<div>
+    <h3>CssIsolation</h3>
+    <span>Parent's span</span>
+    <ChildComponent></ChildComponent>
+    <p>This page demostrates css isolation. There are two components - CssIsolation.razor and ChildComponent.
+    CssIsolation component sets style for h3 and span both setting the font to comic sans. The spans style gets inherited by child component thanks to the use of ::deep combinator.
+    </p>
+</div>

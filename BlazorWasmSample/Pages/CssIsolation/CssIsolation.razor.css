@@ -1,0 +1,7 @@
+﻿h3 {
+    font-family: 'Comic Sans MS'
+}
+
+::deep span {
+    font-family: 'Comic Sans MS'
+}
