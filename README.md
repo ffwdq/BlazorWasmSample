@@ -52,8 +52,8 @@ During build it gets compiled to javascript which you can reference in `JSRuntim
 
 [MSDN](https://docs.microsoft.com/en-us/aspnet/core/blazor/call-javascript-from-dotnet?view=aspnetcore-5.0)
 
-##CSS
-###CSS isolation
+## CSS
+### CSS isolation
 To use css isolation create {ComponentName}.razor.css and define you styles there. The styles are bundled together during build to {ProjectName}.styles.css.
 To provide isolation they are rewritten to target specific attribute which is unique per component.
 
@@ -63,7 +63,7 @@ There is a Css isolation tab with an example and bot `NavMenu` and `MainLayout` 
 
 [MSDN](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/css-isolation?view=aspnetcore-5.0#css-preprocessor-support)
 
-###SASS
+### SASS
 Replacing css with sass is realy easy. There is a [LibSassBuilder](https://www.nuget.org/packages/LibSassBuilder) nuget package which compiles sass to css during build.
 So all that needs to be done is instal the nuget and replace css files with scss.
 
