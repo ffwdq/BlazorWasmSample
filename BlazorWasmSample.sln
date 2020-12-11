@@ -5,9 +5,10 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasmSample", "BlazorWasmSample\BlazorWasmSample.csproj", "{025088FB-41EC-466D-8A4B-01E5E5C73EC8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{4770B7E6-36AE-470D-AFC2-3EBA714DE43D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5397FBFB-55AE-402A-9BA2-14FB8C841AF8}"
 	ProjectSection(SolutionItems) = preProject
-		SolutionItems\CodeAnalysis.ruleset = SolutionItems\CodeAnalysis.ruleset
+		CodeAnalysis.ruleset = CodeAnalysis.ruleset
+		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Global

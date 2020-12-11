@@ -1,13 +1,14 @@
 # BlazorWasmSample
+## About
+This repo is intended to provide some basic project setup and to provide examples to common problems.
+
 ## Code analysis
 ### C#
-Using Microsoft.CodeAnalysis.FxCopAnalyzers and StyleCop.Analyzers nugets.
-Ruleset is located in Solution directory/SolutionItems/CodeAnalysis.ruleset.
-Following needs to be added to csprojs:
-```
-<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-<CodeAnalysisRuleSet>$(SolutionDir)SolutionItems\CodeAnalysis.ruleset</CodeAnalysisRuleSet>
-```
+Using analyzers build in .NET 5 and StyleCop.Analyzers nuget.
+Ruleset is located in SolutionRoot/CodeAnalysis.ruleset.
+And there is a Directory.Build.props also in Solution root directory which sets
+`<CodeAnalysisRuleSet>$(SolutionDir)\CodeAnalysis.ruleset</CodeAnalysisRuleSet>` and `<TreatWarningsAsErrors>true</TreatWarningsAsErrors>`.
+	
 ## Code behind
 I find it more readable to have the HTML template and code separated.
 So all components use code behind.
