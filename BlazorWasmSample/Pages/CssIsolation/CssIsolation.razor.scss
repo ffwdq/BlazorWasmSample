@@ -1,0 +1,9 @@
+﻿$font: 'Comic sans';
+
+h3 {
+    font-family: $font
+}
+
+::deep span {
+    font-family: $font
+}
