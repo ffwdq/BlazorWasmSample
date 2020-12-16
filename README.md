@@ -67,9 +67,18 @@ There is a Css isolation tab with an example and bot `NavMenu` and `MainLayout` 
 Replacing css with sass is realy easy. There is a [LibSassBuilder](https://www.nuget.org/packages/LibSassBuilder) nuget package which compiles sass to css during build.
 So all that needs to be done is instal the nuget and replace css files with scss.
 
+## Logging
+TODO: use better logging provider
+There is builtin support for `Microsoft.Extensions.Logging` with logger which logs to browser's console.
+
+Configuration is done through `wwwroot\appsettings.json`.
+
+To use it just inject ILogger<T>.
+
+[MSDN](https://docs.microsoft.com/en-us/aspnet/core/blazor/fundamentals/logging?view=aspnetcore-5.0&pivots=webassembly)
+
 
 TODO: testing  
-TODO: logging  
 TODO: unhandled exceptions  
 TODO: unit & integration test runners   
 TODO: configuration - environments   
