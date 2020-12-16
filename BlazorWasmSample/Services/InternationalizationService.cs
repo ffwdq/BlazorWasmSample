@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -33,11 +34,12 @@ namespace BlazorWasmSample.Services
             {
                 await using (var jsModule = await _jsRuntime.InvokeAsync<IJSObjectReference>("import", new[] { "./scripts/scripts.js" }).ConfigureAwait(true))
                 {
-                    blazorCulture = await jsModule.InvokeAsync<string>("getLanguage", Array.Empty<object>()).ConfigureAwait(true);
+                    blazorCulture = await jsModule.InvokeAsync<string>("getBrowserLanguage", Array.Empty<object>()).ConfigureAwait(true);
+                    await SetCultureInternal(blazorCulture);
                 }
             }
 
-            var culture = new CultureInfo(blazorCulture);
+            var culture = GetCulture(blazorCulture);
             CultureInfo.DefaultThreadCurrentCulture = culture;
             CultureInfo.DefaultThreadCurrentUICulture = culture;
         }
@@ -49,9 +51,19 @@ namespace BlazorWasmSample.Services
                 return;
             }
 
-            var mewCulture = SupportedCultureInfos.Where(x => x.Name == cultureName).FirstOrDefault() ?? SupportedCultureInfos.First();
-            await _localStorageService.SetItemAsync(_blazorCultureKey, cultureName).ConfigureAwait(true);
-            CultureInfo.CurrentCulture = mewCulture;
+            await SetCultureInternal(cultureName);
+        }
+
+        private async Task SetCultureInternal(string cultureName)
+        {
+            var newCulture = GetCulture(cultureName);
+            await _localStorageService.SetItemAsync(_blazorCultureKey, newCulture.Name).ConfigureAwait(true);
+            CultureInfo.CurrentCulture = newCulture;
+        }
+
+        private CultureInfo GetCulture(string name)
+        {
+            return SupportedCultureInfos.Where(x => x.Name == name).FirstOrDefault() ?? SupportedCultureInfos.First();
         }
     }
 }
