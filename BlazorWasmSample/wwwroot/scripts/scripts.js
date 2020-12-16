@@ -1,1 +1,3 @@
-﻿getBrowserLanguage = () => navigator.language;
+﻿export function getBrowserLanguage() {
+    return navigator.language;
+}
