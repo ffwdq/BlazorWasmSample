@@ -1,16 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Blazored.LocalStorage;
 using BlazorWasmSample.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.JSInterop;
 
 namespace BlazorWasmSample
 {
@@ -24,6 +17,7 @@ namespace BlazorWasmSample
             builder.Services.RegisterServices(builder.HostEnvironment.BaseAddress);
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddLocalization(opt => opt.ResourcesPath = "Resources");
+            builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
             var host = builder.Build();
 
             var i18nService = host.Services.GetRequiredService<IInternationalizationService>();
